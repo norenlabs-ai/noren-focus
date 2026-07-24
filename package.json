@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.renameSync('out','dist')\" && node scripts/prepare-sites-dist.js",
+    "build": "next build && node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.mkdirSync('dist',{recursive:true}); fs.renameSync('out','dist/client')\" && node scripts/prepare-sites-dist.js",
     "start": "next start",
     "lint": "next lint"
   },
